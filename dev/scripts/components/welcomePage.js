@@ -4,6 +4,7 @@ import {
     Route, Link
 } from 'react-router-dom';
 import AddNewUser from './addNewUser.js';
+import PackingList from './packingList.js';
 
 
 //Welcome /Home Page
@@ -17,6 +18,7 @@ class WelcomePage extends React.Component {
             <div>
                 <h1>Welcome to Our Unnamed Travel App</h1>
                 <AddNewUser />
+                <PackingList />
 
             </div>
         )
