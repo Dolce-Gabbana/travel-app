@@ -6,6 +6,9 @@ import {
 } from 'react-router-dom';
 import WelcomePage from './components/welcomePage.js';
 
+//The Main Event 
+//Place Holder for Firebase
+
 class App extends React.Component {
     constructor(){
 		super();
