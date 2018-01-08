@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import AddNewUser from './addNewUser.js';
 
+//Welcome /Home Page
 class WelcomePage extends React.Component {
     constructor(){
         super();
