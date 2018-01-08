@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+	BrowserRouter as Router,
+	Route, Link, Switch, BrowserHistory
+} from 'react-router-dom';
+import WelcomePage from './components/welcomePage.js';
 
 class App extends React.Component {
+    constructor(){
+		super();
+	}
     render() {
-      return (
-        <div>
-          Hello
-        </div>
-      )
+    	return (
+			<Router history={BrowserHistory}>
+				<div>
+					<Switch>
+						<Route exact path='/' component={WelcomePage}></Route>
+					</Switch>
+				</div>
+			</Router>
+		)
     }
 }
 
