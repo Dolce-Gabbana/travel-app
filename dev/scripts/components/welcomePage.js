@@ -17,7 +17,6 @@ class WelcomePage extends React.Component {
             <div>
                 <h1>Welcome to Our Unnamed Travel App</h1>
                 <AddNewUser />
-
             </div>
         )
     }

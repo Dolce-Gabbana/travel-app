@@ -7,7 +7,17 @@ import {
 import WelcomePage from './components/welcomePage.js';
 
 //The Main Event 
-//Place Holder for Firebase
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyCbxJdKcjXziruqH-BIGpSneqMW3OOF_fc",
+authDomain: "travel-app-52d0d.firebaseapp.com",
+databaseURL: "https://travel-app-52d0d.firebaseio.com",
+projectId: "travel-app-52d0d",
+storageBucket: "",
+messagingSenderId: "395512975538"
+};
+firebase.initializeApp(config);
+
 
 class App extends React.Component {
     constructor(){
