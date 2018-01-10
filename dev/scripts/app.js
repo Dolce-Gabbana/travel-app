@@ -4,7 +4,10 @@ import {
 	BrowserRouter as Router,
 	Route, Link, Switch, BrowserHistory
 } from 'react-router-dom';
+import Modal from 'react-modal';
 import WelcomePage from './components/welcomePage.js';
+import PackingList from './components/packingList.js';
+import Nav from './components/nav.js';
 
 //The Main Event 
 //Place Holder for Firebase
@@ -19,6 +22,7 @@ class App extends React.Component {
 				<div>
 					<Switch>
 						<Route exact path='/' component={WelcomePage}></Route>
+						<Route path='/packingList' component={PackingList}></Route>
 					</Switch>
 				</div>
 			</Router>

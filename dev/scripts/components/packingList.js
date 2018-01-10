@@ -13,7 +13,6 @@ class PackingListForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(event) {
-        console.log(event.target.value);
         this.setState({
             currentItem: event.target.value
         })
@@ -106,7 +105,7 @@ class PackingList extends React.Component {
     render() {
         return(
             <section className="PackingList">
-                {/* <Nav /> */}
+                <Nav />
                 <div className="wrapper">
                     <CategoryList category={this.state.category1} />
                     <CategoryList category={this.state.category2} />
