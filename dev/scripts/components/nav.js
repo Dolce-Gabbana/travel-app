@@ -20,44 +20,18 @@ class Nav extends React.Component {
                 </div>
                 <nav>
                     <ul>
-                        <Link to="/">
-                            <i classlist="fa fa-list" aria-hidden="true"></i>
-                            <p>Welcome Page</p>
-                        </Link>
-                        <Link to="/packingList">
-                            <i classlist="fa fa-list" aria-hidden="true"></i>
-                            <p>Packing List</p>
-                        </Link>
-                        {/* <li>
-                            <a href="#">
+                        <li>
+                            <Link to="/">
+                                <i classlist="fa fa-list" aria-hidden="true"></i>
+                                <p>Welcome Page</p>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/packingList">
                                 <i classlist="fa fa-list" aria-hidden="true"></i>
                                 <p>Packing List</p>
-                            </a>
+                            </Link>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i classlist="fa fa-calendar" aria-hidden="true"></i>
-                                <p>Itinerary</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i classlist="fa fa-usd" aria-hidden="true"></i>
-                                <p>Budget</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i classlist="fa fa-book" aria-hidden="true"></i>
-                                <p>Journal</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i classlist="fa fa-undo" aria-hidden="true"></i>
-                                <p>Past Trips</p>
-                            </a>
-                        </li> */}
                     </ul>
                 </nav>
             </div>
