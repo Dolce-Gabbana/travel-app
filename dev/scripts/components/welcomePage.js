@@ -4,6 +4,9 @@ import {
     Route, Link
 } from 'react-router-dom';
 import AddNewUser from './addNewUser.js';
+import LogIn from './logIn.js';
+import PackingList from './packingList.js';
+import AddTrips from './addTrips.js';
 
 
 //Welcome /Home Page
@@ -15,8 +18,19 @@ class WelcomePage extends React.Component {
     render(){
         return (
             <div>
-                <h1>Welcome to Our Unnamed Travel App</h1>
-                <AddNewUser />
+                <header>
+                    <h1>Welcome to Our Unnamed Travel App</h1>
+                    <AddNewUser />
+                    <LogIn />
+                </header>
+                <ul>
+                    <li>
+                        <Link to="/addTrips">Trip Info</Link>
+                    </li>
+
+                </ul>
+
+
             </div>
         )
     }

@@ -5,6 +5,10 @@ import {
 	Route, Link, Switch, BrowserHistory
 } from 'react-router-dom';
 import WelcomePage from './components/welcomePage.js';
+import AddNewUser from './components/addNewUser.js';
+import LogIn from './components/logIn.js';
+import PackingList from './components/packingList.js';
+import AddTrips from './components/addTrips.js'
 
 //The Main Event 
 // Initialize Firebase
@@ -29,6 +33,8 @@ class App extends React.Component {
 				<div>
 					<Switch>
 						<Route exact path='/' component={WelcomePage}></Route>
+						<Route path='/' component={AddTrips}></Route>
+						
 					</Switch>
 				</div>
 			</Router>
