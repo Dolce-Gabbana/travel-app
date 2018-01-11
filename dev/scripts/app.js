@@ -4,11 +4,17 @@ import {
 	BrowserRouter as Router,
 	Route, Link, Switch, BrowserHistory
 } from 'react-router-dom';
+import Modal from 'react-modal';
 import WelcomePage from './components/welcomePage.js';
+<<<<<<< HEAD
 import AddNewUser from './components/addNewUser.js';
 import LogIn from './components/logIn.js';
 import PackingList from './components/packingList.js';
 import AddTrips from './components/addTrips.js'
+=======
+import PackingList from './components/packingList.js';
+import Nav from './components/nav.js';
+>>>>>>> 23f822f338a4f3eb5e48ead44f8b1f86f7d354d3
 
 //The Main Event 
 // Initialize Firebase
@@ -33,8 +39,12 @@ class App extends React.Component {
 				<div>
 					<Switch>
 						<Route exact path='/' component={WelcomePage}></Route>
+<<<<<<< HEAD
 						<Route path='/' component={AddTrips}></Route>
 						
+=======
+						<Route path='/packingList' component={PackingList}></Route>
+>>>>>>> 23f822f338a4f3eb5e48ead44f8b1f86f7d354d3
 					</Switch>
 				</div>
 			</Router>
