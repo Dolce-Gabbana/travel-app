@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import Nav from './nav.js';
 
 class AddTrips extends React.Component {
     constructor (){
@@ -68,9 +69,12 @@ class AddTrips extends React.Component {
 
                         <label htmlFor="destination">Destination:</label>
                         <input type="text" id="destination" name="destination" onChange={this.handleChange} value={this.state.destination} required />
-                    
+
+                        <input type="submit" value="Add Trip" className="submitButton" />
                     </form>
                 </Modal>
+
+
             </div>
         )
     }
