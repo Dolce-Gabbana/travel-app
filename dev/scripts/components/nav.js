@@ -27,11 +27,17 @@ class Nav extends React.Component {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/tripsPage">
+                                <i classlist="fa fa-list" aria-hidden="true"></i>
+                                <p>Trips</p>
+                            </Link>
+                        </li>
+                        {/* <li>
                             <Link to="/packingList">
                                 <i classlist="fa fa-list" aria-hidden="true"></i>
                                 <p>Packing List</p>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>

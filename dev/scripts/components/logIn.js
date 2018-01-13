@@ -7,7 +7,6 @@ class LogIn extends React.Component {
         super(); 
         this.state = {
             modalIsOpen: false,
-            userName: '',
             userEmail: '',
             userPassword: '',
 
@@ -15,9 +14,27 @@ class LogIn extends React.Component {
         //binding
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     };
+
+    handleChange (event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
+
+    handleSubmit (event) {
+        event.preventDefault();
+        firebase.auth().signInWithEmailAndPassword(this.state.userEmail,this.state.userPassword)
+            .then((data) => {
+                console.log(data);
+            })
+            .catch ((error) => {
+            alert(error.message)
+        })    
+    }
+
     // Modal controls
     openModal() {
         this.setState({ modalIsOpen: true });
@@ -40,24 +57,16 @@ class LogIn extends React.Component {
                 <form action="" onSubmit={this.handleSubmit} className="modalForm" >
                     <h2>Your Info:</h2>
 
-                    <label htmlFor="userName">Name:</label>
-                    <input type="text" id="userName" name="userName" placeholder="Name" onChange={this.handleChange} value={this.state.userName} required />
-
                     <label htmlFor="userEmail">Email:</label>
                     <input type="text" id="userEmail" name="userEmail" placeholder="Email" onChange={this.handleChange} value={this.state.userEmail} required />
 
                     <label htmlFor="userPassword">Password:</label>
                     <input type="password" id="userPassword" name="userPassword" onChange={this.handleChange} value={this.state.userPassword} placeholder="Password" required />
 
-                    
-
                     <input type="submit" value="Log In" className="submitButton" />
                     </form>
-
             </Modal>
-
         </div>
-
         )
     }
 }

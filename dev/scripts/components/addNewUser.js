@@ -23,6 +23,7 @@ class AddNewUser extends React.Component {
         this.closeModal = this.closeModal.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.pushToFirebase = this.pushToFirebase.bind(this);
     }
     
     // save text input value in state
@@ -36,28 +37,52 @@ class AddNewUser extends React.Component {
     // user action: submit 'new user' form
     handleSubmit (event){
         event.preventDefault();
-        const userInfo = {
-            userName: this.state.userName,
-            userEmail: this.state.userEmail,
-            userPassword: this.state.userPassword,
-            passwordMatch: this.state.passwordMatch
 
+        if (this.state.userPassword === this.state.passwordMatch){
+            this.pushToFirebase();
+        } else {
+            alert('Passwords do not match')
+        }
+    }
+    // Send information to firebase auth
+        pushToFirebase(){
+            // Add a user
+            firebase.auth().createUserWithEmailAndPassword(this.state.userEmail, this.state.userPassword)
+                .then((data) => {
+                    console.log(data);
+                    this.createUser(data.uid);
+                })
+                .catch((error) => {
+                    alert(error.message)
+                })    
+        }
+        //this is how object is structured in firebase
+        createUser (userID) {
+
+            const userInfo = {
+                user: {
+                    userName: this.state.userName,
+                    userEmail: this.state.userEmail,
+                    userPassword: this.state.userPassword,
+                    passwordMatch: this.state.passwordMatch
+                }
+            };
+            console.log(userInfo);
+            this.setState({
+                modalIsOpen: false,
+                userName: '',
+                userEmail: '',
+                userPassword: '',
+                passwordMatch: ''
+            });
+            const dbRef = firebase.database().ref();
+            dbRef.push(userInfo);
+            
+            
         };
-        console.log(userInfo);
-        this.setState({
-            userName: '',
-            userEmail: '',
-            userPassword: '',
-            passwordMatch: ''
-        });
-        const dbRef = firebase.database().ref();
-        dbRef.push(userInfo);
-
-
-    };
-
-
-
+    
+        
+        
     
 
 
